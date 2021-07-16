@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form action="/login" method="POST">
+    {% for el in form %}
+    <div>
+        <label for={{el[0]}}>{{el[1]}}</label>
+        <input type={{el[2]}} id={{el[0]}} name={{el[0]}} placeholder={{el[3]}}>
+    </div>
+    {% endfor %}
+    <div>
+        <input type="submit" value="Login">
+    </div>
+</form>
+
+<form action="/signup" method="POST">
+    {% for el in form %}
+    <div>
+        <label for={{el[0]}}>{{el[1]}}</label>
+        <input type={{el[2]}} id={{el[0]}} name={{el[0]}} placeholder={{el[3]}}>
+    </div>
+    {% endfor %}
+    <div>
+        <input type="submit" value="Sign Up">
+    </div>
+</form>
+{% endblock %}
